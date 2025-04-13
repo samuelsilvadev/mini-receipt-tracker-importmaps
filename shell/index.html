@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receipt Tracker</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "@navigation": "http://localhost:3001/src/main-navigation.js",
+          "@receipt-list": "http://localhost:3002/src/main-list-receipt.js",
+          "@receipt-add": "http://localhost:3003/src/main-add-receipt.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="mf-shell">
+      <div id="navigation"></div>
+      <div id="container"></div>
+    </div>
+    <script type="module" src="/src/main-shell.js"></script>
+  </body>
+</html>
