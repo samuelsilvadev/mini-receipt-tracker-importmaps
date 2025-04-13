@@ -1,0 +1,23 @@
+{
+  "name": "mini-receipt-tracker-import-maps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm --prefix shell run dev\" \"npm --prefix navigation-mf run dev\" \"npm --prefix add-receipt-mf run dev\" \"npm --prefix list-receipt-mf run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelsilvadev/mini-receipt-tracker-importmaps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuelsilvadev/mini-receipt-tracker-importmaps/issues"
+  },
+  "homepage": "https://github.com/samuelsilvadev/mini-receipt-tracker-importmaps#readme",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
