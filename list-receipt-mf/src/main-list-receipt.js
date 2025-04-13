@@ -19,18 +19,22 @@ const LIST_ITEM_TEMPLATE = `
   </li>
 `;
 
+const HEADER_TEMPLATE = `
+  <div class="flex items-center justify-between mb-8">
+    <h2 class="text-2xl font-bold text-gray-800">Recent Receipts</h2>
+    <span id="amount-items" class="text-sm text-gray-500"
+      >{amount} items</span
+    >
+  </div>
+`;
+
 export function render(data = []) {
   if (data.length === 0) {
     return `
     <div class="flex items-center justify-center p-4 pt-8">
       <div class="w-full max-w-md">
         <div class="bg-white shadow-xl p-8">
-          <div class="flex items-center justify-between mb-8">
-            <h2 class="text-2xl font-bold text-gray-800">Recent Receipts</h2>
-            <span id="amount-items" class="text-sm text-gray-500"
-              >0 items</span
-            >
-          </div>
+          ${HEADER_TEMPLATE.replace("{amount}", 0)}
 
           <div class="space-y-4">
             <div id="empty" class="text-center py-8">
@@ -49,20 +53,8 @@ export function render(data = []) {
   <div class="flex items-center justify-center p-4 pt-8">
     <div class="w-full max-w-md">
       <div class="bg-white shadow-xl p-8">
-        <div class="flex items-center justify-between mb-8">
-          <h2 class="text-2xl font-bold text-gray-800">Recent Receipts</h2>
-          <span id="amount-items" class="text-sm text-gray-500"
-            >${data.length} items</span
-          >
-        </div>
-
+      ${HEADER_TEMPLATE.replace("{amount}", data.length)}
         <div class="space-y-4">
-          <div id="empty" class="text-center py-8">
-            <p class="text-gray-500">
-              No receipts yet. <a href="/add">Add</a> your first one!
-            </p>
-          </div>
-          <div id="list-wrapper">
             <ul
               id="receipt-list"
               class="flex flex-col gap-4"
@@ -76,7 +68,6 @@ export function render(data = []) {
                 })
                 .join("")}
               </ul>
-          </div>
         </div>
       </div>
     </div>
